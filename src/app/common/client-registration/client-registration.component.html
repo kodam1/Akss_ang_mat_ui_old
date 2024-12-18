@@ -1,0 +1,184 @@
+
+<div>
+  <!-- <app-dashboard></app-dashboard> -->
+</div>
+
+<form class="example-form" #form="ngForm">
+
+
+<mat-card>
+  <mat-card-header>
+    <!-- <h1>Client Registration</h1> -->
+    <mat-card-title>
+      <h2>Client Registration</h2>
+      <mat-card-subtitle>
+        <h3>All fields are mandatory</h3>
+      </mat-card-subtitle>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+
+<!-- <mat-grid-list cols="1" rowHeight="100px">
+  <mat-grid-tile> -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Choose a date (MM/DD/YYYY)</mat-label>
+      <input matInput [matDatepicker]="picker" form name="Date1" #Date="ngModel" [(ngModel)]="Client_Registration.Date" required>
+      <!-- <mat-hint>MM/DD/YYYY</mat-hint> -->
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <!-- <input type="date" [placeholder]="" name="Date1" #Date="ngModel" [(ngModel)]="Client_Registration.Date" required> -->
+      <!-- <div style="color: red;">
+        @if ((Date.touched || Date.dirty) && Date.errors?.['required']) {
+          <span>kindly select date!</span>
+        }
+      </div> -->
+    </mat-form-field>
+
+  <!-- </mat-grid-tile> -->
+  <!-- <mat-grid-tile> -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Select Doctor</mat-label>
+      <mat-select placeholder=" " name="Doctor1" #Doctor="ngModel" [(ngModel)]="Client_Registration.Doctor" multiple="true" filter="true" required>
+        <!-- <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option> -->
+        @for (dr of Drli; track dr.id){
+          <mat-option value={{dr.id}}>{{dr.name}}</mat-option>
+        }
+      </mat-select>
+
+      <!-- <div style="color: red;">
+        @if ((Doctor.touched || Doctor.dirty) && Doctor.errors?.['required']) {
+          <span>kindly select doctor!</span>
+        }
+      </div> -->
+    </mat-form-field>
+  <!-- </mat-grid-tile>
+  <mat-grid-tile> -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Select Chemist</mat-label>
+      <mat-select name="Chemist1" #Chemist="ngModel" [(ngModel)]="Client_Registration.Chemist" required>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+      <!-- <div style="color: red;">
+        @if ((Chemist.touched || Chemist.dirty) && Chemist.errors?.['required']) {
+          <span>kindly select chemist!</span>
+        }
+      </div> -->
+    </mat-form-field>
+  <!-- </mat-grid-tile>
+  <mat-grid-tile> -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Select Stockist</mat-label>
+      <mat-select name="Stockist1" #Stockist="ngModel" [(ngModel)]="Client_Registration.Stockist" required>
+        <mat-option value="one">First option</mat-option>
+        <mat-option value="two">Second option</mat-option>
+      </mat-select>
+      <!-- <div style="color: red;">
+        @if ((Stockist.touched || Stockist.dirty) && Stockist.errors?.['required']) {
+          <span>kindly select stockist!</span>
+        }
+      </div> -->
+    </mat-form-field>
+  <!-- </mat-grid-tile>
+  <mat-grid-tile> -->
+    <mat-form-field class="example-full-width">
+        <mat-label>Area / Location</mat-label>
+        <input matInput  name="Area_Location1" #Area_Location="ngModel" [(ngModel)]="Client_Registration.Area_Location" required>
+        <!-- <div style="color: red;">
+          @if ((Area_Location.touched || Area_Location.dirty) && Area_Location.errors?.['required']) {
+            <span>kindly enter Area / Location!</span>
+          }
+        </div> -->
+      </mat-form-field>
+    <!-- </mat-grid-tile>
+  <mat-grid-tile> -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Note</mat-label>
+      <input type="textarea"  matInput name="Note1" #Note="ngModel" [(ngModel)]="Client_Registration.Note" required />
+      <!-- <div style="color: red;">
+        @if ((Note.touched || Note.dirty) && Note.errors?.['required']) {
+          <span>kindly enter note!</span>
+        }
+      </div> -->
+    </mat-form-field>
+  <!-- </mat-grid-tile>
+
+  <mat-grid-tile> -->
+    <section>
+      <!-- <div class="example-label">Raised</div> -->
+      <div class="example-button-row">
+        <button mat-raised-button  matTooltip="Save the data" [disabled]="form.invalid" (click)="onSubmit()" >Save</button>  <br/>
+        <button mat-raised-button  matTooltip="Reset the form" (click)="resetForm()">Reset</button>
+      </div>
+    </section>
+  <!-- </mat-grid-tile>
+
+  <mat-grid-tile> -->
+    {{formValue|json}}
+  <!-- </mat-grid-tile>
+
+</mat-grid-list> -->
+
+  </mat-card-content>
+  <mat-card-footer>
+
+  </mat-card-footer>
+  <mat-card-actions>
+
+  </mat-card-actions>
+
+</mat-card>
+
+
+
+
+
+
+<!--
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>First name</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Long Last Name That Will Be Truncated</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Age </mat-label>
+          <input matInput>
+        </mat-form-field>
+      </td>
+      <td>
+        <mat-form-field class="example-full-width">
+          <mat-label>Salary</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table> -->
+
+
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+

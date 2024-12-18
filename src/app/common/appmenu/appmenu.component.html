@@ -1,0 +1,256 @@
+<mat-toolbar color="primary" class="mat-elevation-z8" *ngIf="showmenu">
+  <button (click)="drawer.toggle()" mat-icon-button>
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>MaterialUI Tutorial</span>
+  <span class="example-spacer"></span>
+  <!-- <button routerLink="" mat-button>Home</button> -->
+  <!-- <button routerLink="about" mat-button>About</button> -->
+  <!-- <button routerLink="contact" mat-button>Contact</button>
+  <button routerLink="product" mat-button>Product</button>
+  <button routerLink="customer" mat-button>Customer</button>
+  <button routerLink="login" mat-button>Login</button>
+  <button routerLink="register" mat-button>Register</button> -->
+
+  <button [matMenuTriggerFor]="lvl1master" mat-button>Master</button>
+
+  <mat-menu #lvl1master="matMenu">
+    <button mat-menu-item [matMenuTriggerFor]="Company">Company</button>
+    <button mat-menu-item [matMenuTriggerFor]="Customer" >Customer</button>
+    <button mat-menu-item [matMenuTriggerFor]="Product">Product</button>
+  </mat-menu>
+
+  <mat-menu #Company="matMenu">
+    <button mat-menu-item>Terms</button>
+    <button mat-menu-item>Tax</button>
+    <button mat-menu-item>Product</button>
+  </mat-menu>
+
+  <mat-menu #Customer="matMenu">
+    <button mat-menu-item>Customer Type</button>
+    <button mat-menu-item>Tax</button>
+  </mat-menu>
+
+  <mat-menu #Product="matMenu">
+    <button mat-menu-item>Category</button>
+    <button mat-menu-item [matMenuTriggerFor]="Variant" >Variant</button>
+    <button mat-menu-item>UOM</button>
+  </mat-menu>
+
+  <mat-menu #Variant="matMenu">
+    <button mat-menu-item>Color</button>
+    <button mat-menu-item>Size</button>
+
+  </mat-menu>
+
+
+  <!-- <button routerLink="input" mat-button>Input</button> -->
+  <!-- <button routerLink="autocomplete" mat-button>Autocomplete</button> -->
+
+  <button (click)="badgevisibility()" mat-icon-button>
+    <mat-icon matBadge="15" [matBadgeHidden]="badgevisible" matBadgeColor="accent" >notifications</mat-icon>
+  </button>
+
+</mat-toolbar>
+
+<mat-drawer-container autosize="true" id="matDrawSideNav">
+  <mat-drawer #drawer opened="true" mode="side" position="start" >
+    <!-- mode ="over"/ push / side -->
+      <mat-nav-list>
+          <mat-list-item>
+            <button mat-button ><mat-icon >dashboard</mat-icon> Dashboard</button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button routerLink=""><mat-icon >home</mat-icon> Home</button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button ><mat-icon >settings</mat-icon> Settings</button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button ><mat-icon >help</mat-icon> Help</button>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button ><mat-icon >analytics</mat-icon> Analytics</button>
+          </mat-list-item>
+          <mat-list-item>
+            <!-- <button [matMenuTriggerFor]="MaterialUIComponents" mat-button><mat-icon >list</mat-icon>Material UI Components Both Directions</button> -->
+            <button [matMenuTriggerFor]="MaterialUIComponents" mat-button><mat-icon >view_module</mat-icon>Material Menu</button>
+
+            <mat-menu #MaterialUIComponents="matMenu">
+
+              <ul style="list-style-type: none;">
+                <li><button mat-button routerLink="card" ><mat-icon >file_copy</mat-icon> Card</button></li>
+                <li><button mat-button routerLink="slider" ><mat-icon >straighten</mat-icon> Slider</button></li>
+                <li><button mat-button routerLink="table" ><mat-icon >table_chart</mat-icon> Table</button></li>
+                <li><button mat-button routerLink="form" ><mat-icon >perm_device_information</mat-icon> Form</button></li>
+                <li> <button mat-button routerLink="popup" ><mat-icon >open_in_browser</mat-icon> Popup</button></li>
+                <li> <button mat-button routerLink="input" ><mat-icon >library_books</mat-icon> Basic Input Form</button></li>
+                <li> <button mat-button routerLink="autocomplete" ><mat-icon >autorenew</mat-icon> Autocomplete</button></li>
+              </ul>
+
+                <button mat-button routerLink="card" ><mat-icon >file_copy</mat-icon> Card</button>
+                <button mat-button routerLink="slider" ><mat-icon >straighten</mat-icon> Slider</button>
+                <button mat-button routerLink="table" ><mat-icon >table_chart</mat-icon> Table</button>
+                <button mat-button routerLink="form" ><mat-icon >perm_device_information</mat-icon> Form</button>
+                <button mat-button routerLink="popup" ><mat-icon >open_in_browser</mat-icon> Popup</button>
+                <button mat-button routerLink="input" ><mat-icon >library_books</mat-icon> Basic Input Form</button>
+                <button mat-button routerLink="autocomplete" ><mat-icon >autorenew</mat-icon> Autocomplete</button>
+
+            </mat-menu>
+
+          </mat-list-item>
+          <mat-list-item>
+            <!-- <button mat-button ><mat-icon >analytics</mat-icon> Analytics</button> -->
+            <!-- <button [matMenuTriggerFor]="MaterialUIComponents2" mat-button><mat-icon >list</mat-icon>Material UI Components Vertical</button> -->
+            <button [matMenuTriggerFor]="MaterialUIComponents2" mat-button><mat-icon >vertical_align_bottom</mat-icon>Menu Vertical</button>
+
+            <mat-menu #MaterialUIComponents2="matMenu">
+                <button mat-menu-item routerLink="card" ><mat-icon >file_copy</mat-icon> Card</button>
+                <button mat-menu-item routerLink="slider" ><mat-icon >straighten</mat-icon> Slider</button>
+                <button mat-menu-item routerLink="table" ><mat-icon >table_chart</mat-icon> Table</button>
+                <button mat-menu-item routerLink="form" ><mat-icon >perm_device_information</mat-icon> Form</button>
+                <button mat-menu-item routerLink="popup" ><mat-icon >open_in_browser</mat-icon> Popup</button>
+                <button mat-menu-item routerLink="input" ><mat-icon >library_books</mat-icon> Basic Input Form</button>
+                <button mat-menu-item routerLink="autocomplete" ><mat-icon >autorenew</mat-icon> Autocomplete</button>
+            </mat-menu>
+
+          </mat-list-item>
+          <mat-list-item>
+            <!-- <button [matMenuTriggerFor]="MaterialUIComponents3" mat-button><mat-icon >list</mat-icon>Material UI Components Horizontal</button> -->
+            <button [matMenuTriggerFor]="MaterialUIComponents3" mat-button><mat-icon >swap_horiz</mat-icon>Menu Horizontal</button>
+
+            <mat-menu #MaterialUIComponents3="matMenu">
+
+                <button mat-button routerLink="card" ><mat-icon >file_copy</mat-icon> Card</button>
+                <button mat-button routerLink="slider" ><mat-icon >straighten</mat-icon> Slider</button>
+                <button mat-button routerLink="table" ><mat-icon >table_chart</mat-icon> Table</button>
+                <button mat-button routerLink="form" ><mat-icon >perm_device_information</mat-icon> Form</button>
+                <button mat-button routerLink="popup" ><mat-icon >open_in_browser</mat-icon> Popup</button>
+                <button mat-button routerLink="input" ><mat-icon >library_books</mat-icon> Basic Input Form</button>
+                <button mat-button routerLink="autocomplete" ><mat-icon >autorenew</mat-icon> Autocomplete</button>
+            </mat-menu>
+
+          </mat-list-item>
+
+          <mat-list-item>
+            <button mat-button [matMenuTriggerFor]="menu"><mat-icon >list</mat-icon>Menu</button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>Item 1</button>
+              <button mat-menu-item>Item 2</button>
+            </mat-menu>
+
+          </mat-list-item>
+
+          <mat-list-item>
+            <button routerLink="about" mat-button><mat-icon>person</mat-icon>About</button>
+          </mat-list-item>
+          <mat-list-item>
+            <button routerLink="contact" mat-button><mat-icon >mail_outline</mat-icon>Contact</button>
+            <!-- mail_outline phone_forwarded -->
+          </mat-list-item>
+          <mat-list-item>
+            <button routerLink="product" mat-button><mat-icon >style</mat-icon>Product</button>
+          </mat-list-item>
+          <mat-list-item>
+            <button routerLink="customer" mat-button><mat-icon >contact_phone</mat-icon>Customer</button>
+          </mat-list-item>
+          <mat-list-item>
+            <button routerLink="login" mat-button><mat-icon >computer</mat-icon>Login</button>
+          </mat-list-item>
+          <mat-list-item>
+            <button routerLink="register" mat-button><mat-icon >featured_play_list</mat-icon>Register</button>
+          </mat-list-item>
+
+          <mat-list-item>
+            <button mat-button routerLink="popup" ><mat-icon >open_in_browser</mat-icon> Popup</button>
+
+          </mat-list-item>
+          <mat-list-item>
+
+            <button [matMenuTriggerFor]="lvl1master" mat-button><mat-icon >list</mat-icon>Services</button>
+
+            <mat-menu #lvl1master="matMenu">
+              <button mat-menu-item [matMenuTriggerFor]="Company">Company</button>
+              <button mat-menu-item [matMenuTriggerFor]="Customer" >Customer</button>
+              <button mat-menu-item [matMenuTriggerFor]="Product">Product</button>
+            </mat-menu>
+
+            <mat-menu #Company="matMenu">
+              <button mat-menu-item>Terms</button>
+              <button mat-menu-item>Tax</button>
+              <button mat-menu-item>Product</button>
+            </mat-menu>
+
+            <mat-menu #Customer="matMenu">
+              <button mat-menu-item>Customer Type</button>
+              <button mat-menu-item>Tax</button>
+            </mat-menu>
+
+            <mat-menu #Product="matMenu">
+              <button mat-menu-item>Category</button>
+              <button mat-menu-item [matMenuTriggerFor]="Variant" >Variant</button>
+              <button mat-menu-item>UOM</button>
+            </mat-menu>
+
+            <mat-menu #Variant="matMenu">
+              <button mat-menu-item>Color</button>
+              <button mat-menu-item>Size</button>
+
+            </mat-menu>
+          </mat-list-item>
+          <mat-list-item>
+            <button mat-button routerLink="input" ><mat-icon>input</mat-icon>Basic Input</button>
+          </mat-list-item>
+
+          <mat-list-item>
+            <button mat-button routerLink="client-registration" ><mat-icon>ballot</mat-icon>Client Registration</button>
+          </mat-list-item>
+
+          <mat-list-item>
+            <button mat-button routerLink="view-clients" ><mat-icon>pageview</mat-icon>View Client Registration</button>
+          </mat-list-item>
+
+          <mat-list-item>
+            <button mat-button routerLink="chips" ><mat-icon>pageview</mat-icon>Chips Multiple Selection</button>
+          </mat-list-item>
+
+
+      </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content>
+
+<div style="text-align: center;min-height: 600px;" >
+
+  <router-outlet >
+
+  </router-outlet>
+
+  <!-- <app-input></app-input> -->
+
+  </div>
+
+  </mat-drawer-content>
+</mat-drawer-container>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

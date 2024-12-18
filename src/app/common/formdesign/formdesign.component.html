@@ -1,0 +1,85 @@
+
+<form [formGroup]="customerform" (ngSubmit)="saveCustomer()">
+<mat-card>
+    <mat-card-content>
+        <mat-form-field class="mat-50">
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="name" placeholder="">
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="">
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+          <mat-label>Phone</mat-label>
+          <input matInput   formControlName="phone" placeholder="">
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+          <mat-label>Country</mat-label>
+          <!-- <input matInput placeholder=""> -->
+           <mat-select  formControlName="country"  >
+            @for (item of countrylist; track item) {
+              <mat-option  [value]="item">
+                  {{item}}
+              </mat-option>
+            }
+
+           </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <textarea matInput formControlName="address"  placeholder=""></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+          <mat-label>Term</mat-label>
+          <input [matAutocomplete]="auto" matInput formControlName="term" placeholder="">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete"  >
+            @for (option of termlist; track option) {
+
+              <mat-option [value]="option"  >{{option}}</mat-option>
+            }
+          </mat-autocomplete>
+        </mat-form-field>
+
+        <mat-form-field class="mat-50">
+          <!-- <mat-label>Date of birth</mat-label>
+          <input matInput placeholder=""  formControlName="dob"  [matDatepicker]="picker">
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-hint>mm/dd/yyyy</mat-hint>
+          <mat-datepicker #picker></mat-datepicker> -->
+
+          <mat-label>Date of birth</mat-label>
+          <input matInput [matDatepicker]="picker" form name="Date1" required>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-hint>mm/dd/yyyy</mat-hint>
+          <mat-datepicker #picker></mat-datepicker>
+
+        </mat-form-field>
+
+        <div class="mat-50">
+          <mat-label>Gender</mat-label>
+          <mat-radio-group  color="primary"   formControlName="gender" >
+          <mat-radio-button name="gender" value="Male">Male</mat-radio-button>
+          <mat-radio-button  name="gender" value="Female">Female</mat-radio-button>
+        </mat-radio-group>
+
+        <mat-checkbox   formControlName="status"  color="warn">Is Active</mat-checkbox>
+        </div>
+
+    </mat-card-content>
+    <mat-card-footer>
+      <div style="margin: 2%;text-align: right;">
+
+        <button mat-raised-button type="submit" color="primary">Save</button>
+        <button mat-raised-button color="warn" (click)="clearForm()">Clear</button>
+
+      </div>
+
+    </mat-card-footer>
+</mat-card>
+</form>

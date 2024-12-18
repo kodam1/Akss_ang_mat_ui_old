@@ -1,0 +1,130 @@
+
+---------------------------------
+
+change port
+
+ng serve --port 4201
+
+-----------------------------
+
+run on the mobile device
+
+ ng serve --host 0.0.0.0
+
+--------------------------------
+  press r + enter to force reload browser
+  press u + enter to show server url
+  press o + enter to open in browser
+  press c + enter to clear console
+  press q + enter to quit
+
+
+  ng new AngularAppName
+
+  ng add @angular/material
+
+  18.0.6
+  npm install @angular/material@6.4.7
+
+
+  ng g c common/about --inline-template
+
+  ng g c common/support --inline-style
+
+  ng g c common/test  --inline-template --inline-style
+
+  ng g c common/home
+
+  ng g p custom/reverse
+
+  ng g g guard/auth
+
+
+  ng build
+
+  ng serve
+
+
+  ------------------------------------------------------------------
+
+ globally
+
+npm install -g json-server
+
+localaly
+
+npm i json-server
+
+create a file called db.json.
+
+json-server --watch src/data/db.json
+or
+json-server --watch db.json
+
+change port number
+json-server --watch db.json --port 8000
+
+GET /users - This retrieves a list of all resource entities of users.
+GET /users/:id - This retrieves a specific user by its id.
+POST /users - This creates a new user.
+PUT /users/:id - This updates a user based on a specified id.
+DELETE /users/:id - This deletes a user based on the specified id.
+
+---------------------------------------------------------
+
+Angular Material UI Icons list
+
+https://www.angularjswiki.com/angular/angular-material-icons-list-mat-icon-list/
+
+
+--------------------------------------------------------
+
+
+
+https://dev.to/umeshtharukaofficial/using-vscode-for-web-development-html-css-and-javascript-1jpb
+
+https://dev.to/codewithtee/vs-code-shortcuts-for-web-developers-363d
+
+
+git hub in hindi
+
+https://www.youtube.com/watch?v=d2xEaQtEhQQ&list=PLOFl1RQmO6W_Lr1DicYi478Z6wTqr9cXt&index=6
+
+---------------------------------------
+
+vs code editor for plugins
+
+spellcheck
+Prettier - Code formatter
+esLint
+icons
+
+
+slides.com/anilsidhu/deck-06e2b4/live?context=editing
+
+
+
+  ----------------------------------------------------------------------------------------------------------
+
+   git init
+
+   git add .
+
+   git commit -a -m 'Title added'
+
+   git push origin master/main
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

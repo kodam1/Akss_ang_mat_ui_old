@@ -1,0 +1,11 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput [matAutocomplete]="auto" [formControlName="formControl"] >
+    <mat-autocomplete autoActiveFirstOption #auto>
+      <!-- @for (let item of filteroptions | async; track item) {
+        <mat-option [value]="option">{{option}}</mat-option>
+      } -->
+    </mat-autocomplete>
+  </mat-form-field>
+  </form>
+  <!-- [formControl]="formcontrol" -->

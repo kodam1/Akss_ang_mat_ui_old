@@ -1,0 +1,49 @@
+<mat-toolbar class="">
+  <button mat-icon-button class="example-sidenav-content example-icon " aria-label="Example icon-button with menu icon"
+  (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <!-- <span>My App</span> -->
+  <div class="example-button-row">
+    <button mat-button>Home</button>
+    <button mat-button>Customer</button>
+    <button mat-button>Gallary</button>
+    <button mat-button>AboutUs</button>
+    <button mat-button>ContacttUs</button>
+    <!-- <button mat-button disabled>Disabled</button>
+    <a mat-button href="https://www.google.com/" target="_blank">Link</a> -->
+  </div>
+
+  <span class="example-spacer"></span>
+
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button>
+
+
+</mat-toolbar>
+
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    @if (showFiller) {
+      <p>Lorem, ipsum dolor sit amet consectetur.</p>
+    }
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Toggle extra text
+    </button>
+  </mat-drawer>
+
+  <!-- <div class="example-sidenav-content">
+    <button type="button" mat-button (click)="drawer.toggle()">
+      Toggle sidenav
+    </button>
+  </div> -->
+
+</mat-drawer-container>
+
+
+

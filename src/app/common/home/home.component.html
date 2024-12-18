@@ -1,0 +1,76 @@
+
+<mat-card appearance="outlined">
+  <mat-card-header>
+    <mat-card-title> {{title | uppercase}}</mat-card-title>
+    <mat-card-subtitle>{{subtitle | lowercase}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+
+    <span>{{todaydate | date : 'dd/MMM/yyyy'}}</span>
+    <br>
+    <span>{{salary | currency:'EUR'}}</span>
+    <br>
+    <span>{{salary | number:'1.2-2'}} </span>
+    <br>
+    <span>{{salary/100 | percent}} </span>
+    <br>
+    <span>{{_obj | json}}</span>
+    <br>
+    <span>{{title | reverse}}</span>
+    <br>
+    <span>
+      <input type="checkbox" [disabled]="isdisabled">
+      <input type="checkbox" checked={{isdisabled}}>
+    </span>
+    <br>
+    <span>
+      <input type="text" [value]="isdisabled">
+    </span>
+    <br>
+    <!-- <input (keyup)="updatetitle($event)"> -->
+    <input [(ngModel)]="title">
+    <br>
+    <button (click)="ChangTitle()">Click here</button>
+
+      <div [ngClass]="{'active':isdisabled,'inactive':!isdisabled}">
+        <p>This is example attribute diective</p>
+      </div>
+
+      <div>
+        <p [ngStyle]="{'color':_color,'font-Size.px':_font}">This is example attribute diective</p>
+      </div>
+
+      <div *ngIf='_isShow'>
+          <h2>This is if condition checked</h2>
+      </div>
+
+      <div *ngFor="let item of tickedlist" [ngStyle]="{'background-color':item.color ,'color':_color}" >
+        <h2>{{item.id}}</h2>
+        <p>{{item.name | uppercase}}</p>
+      </div>
+
+      <div [ngSwitch]='_view'>
+          <div *ngSwitchCase="'home'">This is home view</div>
+          <div *ngSwitchCase="'about'">This is about view</div>
+          <div *ngSwitchDefault>This is Default view</div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+  </mat-card-content>
+  <mat-card-actions>
+
+  </mat-card-actions>
+</mat-card>
+<br>
+
+
+
+

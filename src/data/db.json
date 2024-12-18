@@ -1,0 +1,47 @@
+{
+  "user": [
+    {
+      "id": "admin",
+      "name": "adminuser",
+      "password": "admin",
+      "role": "salesman"
+    },
+    {
+      "id": "jitu",
+      "name": "jituman",
+      "password": "jitupass",
+      "role": "support"
+    },
+    {
+      "id": "ntuser",
+      "password": "test1",
+      "name": "ntuser",
+      "role": "salesman",
+      "gender": "m",
+      "email": "ntuser@test.com"
+    }
+  ],
+  "Products": [
+    {
+      "id": "0",
+      "name": "bat ",
+      "description": "bat desc",
+      "price": "400",
+      "status": true
+    },
+    {
+      "id": "0",
+      "name": "ba",
+      "description": "adsf",
+      "price": "10",
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "Navratan",
+      "description": "Navratan is good for hair oil",
+      "price": "40",
+      "status": true
+    }
+  ]
+}
