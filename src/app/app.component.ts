@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, computed, inject, signal } from '@angular/core';
 // import {  RouterOutlet } from '@angular/router';
 import { AppmenuComponent } from './common/appmenu/appmenu.component';
+import { ResponsiveService } from './services/responsive.service';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,42 @@ import { AppmenuComponent } from './common/appmenu/appmenu.component';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
   title = 'AnularBoat';
+
+  themeSelectorOpen = signal(false);
+  componentSelectorOpen = signal(true);
+  // themingService = inject(ThemingService);
+  responsiveService = inject(ResponsiveService);
+
+  // componentSelectorMode = computed(() => {
+  //   if(this.responsiveService.smallWidth()){
+  //     return 'side';
+  //   }
+  //   else{
+  //     return 'over';
+  //   }
+
+  // }
+  // )
+
+  componentSelectorMode = computed(() => {
+    if(this.responsiveService.smallWidth()){
+      return 'side';
+    }
+    else{
+      return 'over';
+    }
+
+  }
+  )
+
+
+
+
+
+
+
+
+
 }

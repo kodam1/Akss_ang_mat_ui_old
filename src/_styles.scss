@@ -1,0 +1,50 @@
+
+@use "@angular/material" as mat;
+
+@include mat.core();
+
+$indigo-pink : 'indigo-pink';
+$blue-palatte : 'blue-palatte';
+
+$default-theme : mat.define-theme(
+  (
+      color : (
+        theme-type : light ,
+        primary : mat.$indigo-pink,
+        tertiary : mat.$blue-palatte,
+      ),
+      // density : (
+      //   scale : -4,
+      // )
+  )
+  /* // shadows : mat.shadows($default-shadows),
+  // typography : mat.typography-config($font-family: 'Roboto', $font-display: 'swap'),
+  // mixins : mat.mixins($default-theme) */
+);
+
+$compact-theme : mat.define-theme(
+  (
+      density : (
+        scale : -4,
+      ),
+  )
+);
+
+
+:root{
+  @include mat.all-component-theme($default-theme);
+  @include mat.form-field-density($compact-theme);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
